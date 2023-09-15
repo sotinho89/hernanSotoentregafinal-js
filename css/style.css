@@ -11,18 +11,18 @@ body {
 }
 
 main {
-  width: 500px;
-  background-color: #f22;
+  width: 600px;
+  background-color: yellow;
   padding: 1rem;
   margin: 0 auto;
   border-radius: 1rem;
   text-align: center;
-  color: white;
+  color: rgb(154, 13, 206);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #caja {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(9, 36, 238);
 }
 
 input {

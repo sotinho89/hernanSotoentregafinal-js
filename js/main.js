@@ -1,16 +1,16 @@
- // https://pokeapi.co/api/v2/pokemon/{id or name}/
 
- function render(pokemon) {
-    //console.log(pokemon)
-    document.querySelector('h1').textContent = pokemon.name;
-    document.querySelector('#imagen').setAttribute('src', pokemon.sprites.front_shiny)
+
+ function render(simpson) {
+    
+    document.querySelector('h1').textContent = simpson.name;
+    document.querySelector('#imagen').setAttribute('src', simpson)
 
 
 }
 
-async function getPokemon(id) {
+async function getSimpson(id) {
     try {
-        const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+        const res = await fetch(`https://apisimpsons.fly.dev/api/personajes?limit=20&page=2/${id}`);
         const data = await res.json();
         return data;
     } catch (e) {
@@ -19,14 +19,14 @@ async function getPokemon(id) {
 }
 
 async function init() {
-    const pokemon = await getPokemon(150);
-    render(pokemon);
+    const simpson = await getSimpson(150);
+    render(simpson);
 }
 
 let search = document.querySelector('#search')
 search.addEventListener('change', async () => {
-    const pokemon = await getPokemon(search.value.toLowerCase());
-    render(pokemon);
+    const simpson = await getSimpson(search.value.toLowerCase());
+    render(simpson);
 })
 
 init();
